@@ -1,0 +1,30 @@
+(library
+ (name TestSnapshot)
+ (library_flags
+  (-linkall -g))
+ (libraries logs-ppx logs)
+ (preprocess
+  (pps logs-ppx)))
+
+(rule
+ (targets pp.result)
+ (deps simple.re.pp.ml)
+ (action
+  (with-stdout-to
+   %{targets}
+   (run refmt --parse=binary %{deps}))))
+
+(rule
+ (targets pp_ml.result)
+ (deps simple_ml.pp.ml)
+ (action
+  (with-stdout-to
+   %{targets}
+   (run logs-ppx %{deps}))))
+
+(rule
+ (alias runtest)
+ (action
+  (progn
+   (diff pp_ml.expected pp_ml.result)
+   (diff pp.expected pp.result))))

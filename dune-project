@@ -20,4 +20,4 @@
  (synopsis "PPX to cut down on boilerplate when using Logs")
  (description
    "PPX to remove the closure when logging with Logs. The PPX will still generate the closure which keeps the nice properties of the Logs library.")
- (depends ocaml dune ppxlib)))
+ (depends ocaml dune ppxlib))

@@ -24,4 +24,5 @@
   ocaml
   dune
   ppxlib
-  (ocaml-migrate-parsetree (and :dev (>= 1.7.3)))))
+  (ocaml-migrate-parsetree (and :dev (>= 1.7.3)))
+  (reason  (and :dev (>= 3.0.0) (<= 4.0.0)))))

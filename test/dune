@@ -4,7 +4,16 @@
   (-linkall -g))
  (libraries logs-ppx logs)
  (preprocess
-  (pps logs-ppx)))
+  (pps logs-ppx))
+  (modules :standard \ tester))
+
+(executable
+ (name tester)
+ (libraries logs-ppx)
+ (preprocess
+  (pps logs-ppx))
+ (ocamlopt_flags (-linkall))
+ (modules tester))
 
 (rule
  (targets pp.result)
@@ -20,7 +29,7 @@
  (action
   (with-stdout-to
    %{targets}
-   (run logs-ppx %{deps}))))
+   (run ./tester.exe %{deps}))))
 
 (rule
  (alias runtest)

@@ -1,6 +1,0 @@
-(executable
- (name Bin)
- (public_name logs-ppx)
- (libraries logs-ppx)
- (ocamlopt_flags (-linkall))
- (package logs-ppx))

@@ -21,7 +21,7 @@
  (description
    "PPX to remove the closure when logging with Logs. The PPX will still generate the closure which keeps the nice properties of the Logs library.")
  (depends
-  ocaml
+  (ocaml (>= 4.8.0))
   dune
   ppxlib
   (logs :with-test)

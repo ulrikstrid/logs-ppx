@@ -13,8 +13,9 @@ depends: [
   "ocaml"
   "dune" {>= "2.6"}
   "ppxlib"
-  "ocaml-migrate-parsetree" {dev & >= "1.7.3"}
-  "reason" {dev & >= "3.0.0" & <= "4.0.0"}
+  "logs" {with-test}
+  "ocaml-migrate-parsetree" {with-test & >= "1.7.3"}
+  "reason" {with-test & >= "3.0.0" & <= "4.0.0"}
 ]
 build: [
   ["dune" "subst"] {pinned}

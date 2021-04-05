@@ -16,12 +16,12 @@ step()
   if [ "x$action" == "xN" ]; then exit 2; fi
 }
 
-dune-release tag "$TAG"
+dune-release tag "$TAG" --force
 step
-dune-release distrib -p logs-ppx -n logs-ppx -t "$TAG"
+dune-release distrib -p logs-ppx -t "$TAG"
 step
-dune-release publish distrib -p logs-ppx -n logs-ppx -t "$TAG"
+dune-release publish distrib -p logs-ppx -t "$TAG"
 step
-dune-release opam pkg -p logs-ppx -n logs-ppx -t "$TAG"
+dune-release opam pkg -p logs-ppx -t "$TAG"
 step
-dune-release opam submit -p logs-ppx -n logs-ppx -t "$TAG"
+dune-release opam submit -p logs-ppx -t "$TAG"

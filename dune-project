@@ -1,6 +1,6 @@
 (lang dune 2.6)
 
-(name "logs-ppx")
+(name logs-ppx)
 
 (version 0.2.0)
 
@@ -18,7 +18,7 @@
 (maintainers "ulrik.strid@outlook.com")
 
 (package
- (name "logs-ppx")
+ (name logs-ppx)
  (synopsis "PPX to cut down on boilerplate when using Logs")
  (description
    "PPX to remove the closure when logging with Logs. The PPX will still generate the closure which keeps the nice properties of the Logs library.")

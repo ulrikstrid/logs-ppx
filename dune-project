@@ -2,9 +2,11 @@
 
 (name "logs-ppx")
 
-(version 0.1.0)
+(version 0.2.0)
 
 (generate_opam_files true)
+
+(allow_approximate_merlin)
 
 (source
  (github ulrikstrid/logs-ppx))
@@ -21,9 +23,14 @@
  (description
    "PPX to remove the closure when logging with Logs. The PPX will still generate the closure which keeps the nice properties of the Logs library.")
  (depends
-  (ocaml (>= 4.8.0))
+  (ocaml
+   (>= 4.8.0))
   dune
   ppxlib
   (logs :with-test)
-  (ocaml-migrate-parsetree (and :with-test (>= 1.7.3) (< 2.0.0)))
-  (reason  (and :with-test (>= 3.0.0) (< 4.0.0)))))
+  (ocaml-migrate-parsetree
+   (and
+    :with-test
+    (>= 1.7.3)
+    (< 2.0.0)))
+  ))

@@ -1,6 +1,6 @@
 {
   "name": "logs-ppx",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "This is an example of ppblix",
   "author": "Ulrik Strid <ulrik.strid@outlook.com>",
   "keywords": [
@@ -33,7 +33,6 @@
     "@opam/logs": "*",
     "@opam/merlin": "*",
     "ocaml": "4.10.0",
-    "@opam/reason": ">= 3.6.0 < 4.0.0",
     "@opam/dune": "2.7.1",
     "@opam/ocaml-migrate-parsetree": "^1.7.3",
     "@opam/ppxlib": "0.14.0",

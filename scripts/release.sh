@@ -18,7 +18,7 @@ step()
 
 dune-release tag "$TAG"
 step
-dune-release distrib -p logs-ppx -n logs-ppx -t "$TAG" --skip-tests #--skip-lint
+dune-release distrib -p logs-ppx -n logs-ppx -t "$TAG"
 step
 dune-release publish distrib -p logs-ppx -n logs-ppx -t "$TAG"
 step

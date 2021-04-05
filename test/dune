@@ -1,39 +1,17 @@
-(library
- (name TestSnapshot)
- (library_flags
-  (-linkall -g))
- (libraries logs-ppx logs)
- (preprocess
-  (pps logs-ppx))
-  (modules :standard \ tester))
-
 (executable
- (name tester)
- (libraries logs-ppx)
- (preprocess
-  (pps logs-ppx))
- (ocamlopt_flags (-linkall))
- (modules tester))
+ (name pp)
+ (modules pp)
+ (libraries logs-ppx ppxlib))
 
 (rule
- (targets pp.result)
- (deps simple.re.pp.ml)
+ (targets test.actual.ml)
+ (deps
+  (:pp pp.exe)
+  (:input test.ml))
  (action
-  (with-stdout-to
-   %{targets}
-   (run refmt --parse=binary %{deps}))))
-
-(rule
- (targets pp_ml.result)
- (deps simple_ml.pp.ml)
- (action
-  (with-stdout-to
-   %{targets}
-   (run ./tester.exe %{deps}))))
+  (run ./%{pp} --impl %{input} -o %{targets})))
 
 (rule
  (alias runtest)
  (action
-  (progn
-   (diff pp_ml.expected pp_ml.result)
-   (diff pp.expected pp.result))))
+  (diff test.expected.ml test.actual.ml)))

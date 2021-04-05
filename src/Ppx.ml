@@ -10,7 +10,7 @@ let expander ~ctxt e l =
   in
   Builder.eapply ~loc
     (Builder.pexp_ident ~loc:log_loc
-       { txt = Ldot (Lident "Logs", log_type); loc })
+       { txt = Ldot (Lident "Log", log_type); loc })
     [
       Builder.pexp_fun ~loc Nolabel None
         (Builder.ppat_var ~loc { txt = "logger-function"; loc })

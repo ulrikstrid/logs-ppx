@@ -13,9 +13,9 @@ let expander ~ctxt e l =
        { txt = Ldot (Lident "Logs", log_type); loc })
     [
       Builder.pexp_fun ~loc Nolabel None
-        (Builder.ppat_var ~loc { txt = "m"; loc })
+        (Builder.ppat_var ~loc { txt = "logger-function"; loc })
         (Builder.eapply ~loc
-           (Builder.pexp_ident ~loc { txt = Lident "m"; loc })
+           (Builder.pexp_ident ~loc { txt = Lident "logger-function"; loc })
            (List.map snd l));
     ]
 

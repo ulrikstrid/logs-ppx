@@ -28,9 +28,4 @@
   dune
   ppxlib
   (logs :with-test)
-  (ocaml-migrate-parsetree
-   (and
-    :with-test
-    (>= 1.7.3)
-    (< 2.0.0)))
   ))

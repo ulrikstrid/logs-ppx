@@ -34,7 +34,6 @@
     "@opam/merlin": "*",
     "ocaml": "4.10.0",
     "@opam/dune": "2.7.1",
-    "@opam/ocaml-migrate-parsetree": "^1.7.3",
     "@opam/ppxlib": "0.14.0",
     "@opam/ocaml-lsp-server": "ocaml/ocaml-lsp:ocaml-lsp-server.opam#master",
     "@opam/ocamlformat": "*",

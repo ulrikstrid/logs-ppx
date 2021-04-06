@@ -1,4 +1,4 @@
-(lang dune 2.6)
+(lang dune 2.8)
 
 (name logs-ppx)
 
@@ -6,12 +6,10 @@
 
 (generate_opam_files true)
 
-(allow_approximate_merlin)
-
 (source
  (github ulrikstrid/logs-ppx))
 
-(license BSD-3)
+(license BSD-3-Clause)
 
 (authors "Ulrik Strid")
 

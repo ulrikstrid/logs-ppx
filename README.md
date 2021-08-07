@@ -11,9 +11,20 @@ Add this to your dune stanza for your executable
   (pps logs-ppx))
 ```
 
+and make sure that the `logs` library has also been added to the `libraries` field, e.g.,
+
+```lisp
+(library
+  (name foo)
+  (libraries logs))
+```
+
 Then you use it like this in OCaml:
 
 ```ocaml
+(* Convention to avoid name clashes *)
+module Log = Logs
+
 [%log debug "Hello %s!" "world"]
 (* Which genrates the following *)
 Logs.debug (fun m -> m "Hello %s!" "world")
